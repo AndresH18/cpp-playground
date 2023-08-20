@@ -14,7 +14,10 @@ find_package(Qt6 COMPONENTS
         Widgets
         REQUIRED)
 
-add_executable(File_Viewer main.cpp)
+add_executable(File_Viewer main.cpp
+        main_window.cpp
+        main_window.h
+        main_window.ui)
 target_link_libraries(File_Viewer
         Qt::Core
         Qt::Gui
