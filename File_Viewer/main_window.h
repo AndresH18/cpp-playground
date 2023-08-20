@@ -6,7 +6,7 @@
 #define FILE_VIEWER_MAIN_WINDOW_H
 
 #include <QMainWindow>
-
+#include <QFileSystemModel>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class Main_Window; }
@@ -22,6 +22,7 @@ public:
 
 private:
     Ui::Main_Window* ui;
+    QFileSystemModel* p_fileSystemModel;
 };
 
 
