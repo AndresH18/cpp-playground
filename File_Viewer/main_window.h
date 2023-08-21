@@ -20,9 +20,16 @@ public:
 
     ~Main_Window() override;
 
+
 private:
     Ui::Main_Window* ui;
     QFileSystemModel* p_fileSystemModel;
+    bool b_isEditted;
+
+private slots:
+    void fileSelected(const QModelIndex& qModelIndex);
+    void textChanged();
+
 };
 
 
