@@ -22,11 +22,15 @@ Main_Window::Main_Window(QWidget* parent) :
     ui->treeView->setModel(p_fileSystemModel);
     ui->treeView->setRootIndex(p_fileSystemModel->index(rootPath));
 
+    ui->treeView->setColumnHidden(1, true); // hide columns 1 (zero based index), "Size" column
+
     QObject::connect(ui->treeView, &QTreeView::activated, this, &Main_Window::fileSelected);
-    QObject::connect(ui->plainTextEdit, &QPlainTextEdit::textChanged, this, &Main_Window::textChanged);
+    QObject::connect(ui->saveButton, &QPushButton::clicked, this, &Main_Window::saveFile);
+
 }
 
 void Main_Window::fileSelected(const QModelIndex& qModelIndex) {
+
     if (!qModelIndex.isValid())
         return;
 
@@ -47,13 +51,20 @@ void Main_Window::fileSelected(const QModelIndex& qModelIndex) {
         }
 
         file.close();
-
     }
 }
 
-void Main_Window::textChanged() {
-    b_isEditted = true;
-    ui->saveButton->setEnabled(true);
+void Main_Window::saveFile() {
+    QModelIndex index = ui->treeView->selectionModel()->currentIndex();
+    QString path = p_fileSystemModel->filePath(index);
+
+    QFile file{path};
+    if (file.open(QIODevice::WriteOnly | QIODevice::Text)) {
+        QTextStream out{&file};
+        out << ui->plainTextEdit->toPlainText();
+
+        file.close();
+    }
 }
 
 Main_Window::~Main_Window() {

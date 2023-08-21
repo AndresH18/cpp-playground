@@ -5,6 +5,7 @@
 #ifndef FILE_VIEWER_MAIN_WINDOW_H
 #define FILE_VIEWER_MAIN_WINDOW_H
 
+#include <memory>
 #include <QMainWindow>
 #include <QFileSystemModel>
 
@@ -27,10 +28,10 @@ private:
     bool b_isEditted;
 
 private slots:
+
     void fileSelected(const QModelIndex& qModelIndex);
-    void textChanged();
 
+    void saveFile();
 };
-
 
 #endif //FILE_VIEWER_MAIN_WINDOW_H
