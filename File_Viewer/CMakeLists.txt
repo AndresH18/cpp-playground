@@ -1,12 +1,14 @@
 cmake_minimum_required(VERSION 3.26)
 project(File_Viewer)
 
+message($ENV{QT_CMAKE_PREFIX})
+
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTORCC ON)
 set(CMAKE_AUTOUIC ON)
 
-set(CMAKE_PREFIX_PATH "D:/sdks/Qt/6.5.2/mingw_64/lib/cmake")
+set(CMAKE_PREFIX_PATH "$ENV{QT_CMAKE_PREFIX}")
 
 find_package(Qt6 COMPONENTS
         Core
