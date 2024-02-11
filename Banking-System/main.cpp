@@ -8,6 +8,8 @@
 
 void some_temp_examples();
 
+void relearning_somethings_about_pointers();
+
 int main(int argc, char* argv[]) {
     // QApplication a(argc, argv);
     // QPushButton button("Hello world!", nullptr);
@@ -15,6 +17,11 @@ int main(int argc, char* argv[]) {
     // button.show();
     // return QApplication::exec();
 
+
+    return 0;
+} // banking
+
+void relearning_somethings_about_pointers() {
     vector<int> v;
     v.push_back(1);
     v.push_back(5);
@@ -37,9 +44,7 @@ int main(int argc, char* argv[]) {
     cout << "*i_shared=" << *i_shared << endl;
 
     delete i;
-    return 0;
-} // banking
-
+}
 
 void some_temp_examples() {
     class user {

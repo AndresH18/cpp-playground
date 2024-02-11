@@ -18,7 +18,10 @@ add_executable(Banking_System main.cpp
         data/user.cpp
         data/user.h
         data/bank_account.cpp
-        data/bank_account.h)
+        data/bank_account.h
+        ui/main_window.cpp
+        ui/main_window.h
+        ui/main_window.ui)
 target_link_libraries(Banking_System
         Qt::Core
         Qt::Gui
