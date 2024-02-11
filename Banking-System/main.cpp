@@ -3,7 +3,9 @@
 
 #include "data/user.h"
 
-// #include <QApplication>
+#include <QApplication>
+
+#include "ui/main_window.h"
 // #include <QPushButton>
 
 void some_temp_examples();
@@ -11,12 +13,18 @@ void some_temp_examples();
 void relearning_somethings_about_pointers();
 
 int main(int argc, char* argv[]) {
-    // QApplication a(argc, argv);
+    QApplication a(argc, argv);
     // QPushButton button("Hello world!", nullptr);
     // button.resize(200, 100);
     // button.show();
     // return QApplication::exec();
 
+    ui::main_window m;
+
+    m.show();
+
+    return QApplication::exec();
+    // window.show();
 
     return 0;
 } // banking

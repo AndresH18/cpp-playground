@@ -8,12 +8,13 @@
 #include "ui_main_window.h"
 
 namespace ui {
-main_window::main_window(QWidget *parent) :
-    QWidget(parent), ui(new Ui::main_window) {
-    ui->setupUi(this);
-}
+    main_window::main_window(QWidget* parent) : QWidget(parent), ui(new Ui::main_window) {
+        ui->setupUi(this);
+        ui->the_label->setText("My my hello. how are you");
+        ui->the_label->adjustSize();
+    }
 
-main_window::~main_window() {
-    delete ui;
-}
+    main_window::~main_window() {
+        delete ui;
+    }
 } // ui

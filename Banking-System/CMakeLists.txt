@@ -7,6 +7,7 @@ set(CMAKE_AUTORCC ON)
 set(CMAKE_AUTOUIC ON)
 
 set(CMAKE_PREFIX_PATH "$ENV{QT_CMAKE_PREFIX}")
+#set(CMAKE_AUTOUIC_SEARCH_PATHS "ui")
 
 find_package(Qt6 COMPONENTS
         Core
@@ -21,7 +22,9 @@ add_executable(Banking_System main.cpp
         data/bank_account.h
         ui/main_window.cpp
         ui/main_window.h
-        ui/main_window.ui)
+        ui/main_window.ui
+        users_item_model.cpp
+        users_item_model.h)
 target_link_libraries(Banking_System
         Qt::Core
         Qt::Gui
