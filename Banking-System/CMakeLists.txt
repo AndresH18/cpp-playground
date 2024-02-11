@@ -14,7 +14,11 @@ find_package(Qt6 COMPONENTS
         Widgets
         REQUIRED)
 
-add_executable(Banking_System main.cpp)
+add_executable(Banking_System main.cpp
+        data/user.cpp
+        data/user.h
+        data/bank_account.cpp
+        data/bank_account.h)
 target_link_libraries(Banking_System
         Qt::Core
         Qt::Gui
