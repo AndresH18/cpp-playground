@@ -15,6 +15,7 @@ using namespace std;
 namespace banking::data {
     class user {
         std::string name_;
+        // TODO: convert to shared pointer of vector of unique pointers of bank account
         std::vector<shared_ptr<bank_account> > accounts_;
 
     public:
@@ -25,6 +26,8 @@ namespace banking::data {
         void set_name(std::string name);
 
         void add_account(bank_account&& account);
+
+        std::vector<shared_ptr<bank_account>>& get_accounts();
     };
 } // data
 // banking

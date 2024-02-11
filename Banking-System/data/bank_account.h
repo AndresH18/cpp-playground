@@ -15,6 +15,9 @@ namespace banking::data {
         explicit bank_account(int balance);
 
         explicit bank_account() = default;
+
+
+        [[nodiscard]] int get_balance() const;
     };
 } // banking::data
 
